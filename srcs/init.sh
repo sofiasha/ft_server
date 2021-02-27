@@ -1,7 +1,6 @@
 #!/bin/bash
 service nginx start
 service php7.3-fpm start
-#/etc/init.d/php7.3-fpm start
 service mysql start
 echo "CREATE DATABASE IF NOT EXISTS wordpress;" | mysql -u root --skip-password
 echo "GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost';" | mysql -u root --skip-password
