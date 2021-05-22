@@ -23,7 +23,7 @@ RUN tar -xzvf phpMyAdmin-5.0.4-all-languages.tar.gz && mv phpMyAdmin-5.0.4-all-l
 RUN rm -rf phpMyAdmin-5.0.4-all-languages.tar.gz
 COPY srcs/config.inc.php /var/www/html/phpmyadmin
 
-#ssl
+#ssl. X.509 cert - open key certificate,  w/o pass, new certif request and 2049 bit rsa key
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/ssl.key -out /etc/ssl/ssl -subj "/C=RU/ST=Tatarstan/L=Kazan/O=21 school/OU=ltanisha/CN=localhost"
 
 #giving rights
